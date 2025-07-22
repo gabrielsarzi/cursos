@@ -38,6 +38,7 @@ class ParticleNetwork {
     resizeCanvas() {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
+        this.createParticles(); // Recria partículas ao redimensionar
     }
     
     createParticles() {
@@ -56,7 +57,6 @@ class ParticleNetwork {
     bindEvents() {
         window.addEventListener('resize', () => {
             this.resizeCanvas();
-            this.createParticles();
         });
         
         document.addEventListener('mousemove', (e) => {
@@ -67,23 +67,15 @@ class ParticleNetwork {
     
     updateParticles() {
         this.particles.forEach(particle => {
-            // Update position
             particle.x += particle.vx;
             particle.y += particle.vy;
             
-            // Bounce off edges
-            if (particle.x < 0 || particle.x > this.canvas.width) {
-                particle.vx *= -1;
-            }
-            if (particle.y < 0 || particle.y > this.canvas.height) {
-                particle.vy *= -1;
-            }
+            if (particle.x < 0 || particle.x > this.canvas.width) particle.vx *= -1;
+            if (particle.y < 0 || particle.y > this.canvas.height) particle.vy *= -1;
             
-            // Keep particles within bounds
             particle.x = Math.max(0, Math.min(this.canvas.width, particle.x));
             particle.y = Math.max(0, Math.min(this.canvas.height, particle.y));
             
-            // Mouse interaction
             const dx = this.mousePosition.x - particle.x;
             const dy = this.mousePosition.y - particle.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
@@ -94,7 +86,6 @@ class ParticleNetwork {
                 particle.vy += (dy / distance) * force * 0.01;
             }
             
-            // Apply friction
             particle.vx *= 0.99;
             particle.vy *= 0.99;
         });
@@ -119,7 +110,6 @@ class ParticleNetwork {
                 
                 if (distance < this.settings.maxDistance) {
                     const opacity = (this.settings.maxDistance - distance) / this.settings.maxDistance * this.settings.lineOpacity;
-                    
                     this.ctx.beginPath();
                     this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
                     this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
@@ -133,30 +123,19 @@ class ParticleNetwork {
     
     animate() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        
         this.updateParticles();
         this.drawConnections();
         this.drawParticles();
-        
         this.animationId = requestAnimationFrame(() => this.animate());
     }
     
     destroy() {
-        if (this.animationId) {
-            cancelAnimationFrame(this.animationId);
-        }
-        if (this.canvas) {
-            this.canvas.remove();
-        }
+        if (this.animationId) cancelAnimationFrame(this.animationId);
+        if (this.canvas) this.canvas.remove();
     }
 }
 
-// Initialize particles when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     const particleNetwork = new ParticleNetwork();
-    
-    // Clean up on page unload
-    window.addEventListener('beforeunload', () => {
-        particleNetwork.destroy();
-    });
+    window.addEventListener('beforeunload', () => particleNetwork.destroy());
 });
