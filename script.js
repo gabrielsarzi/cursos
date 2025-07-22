@@ -58,7 +58,7 @@ document.querySelectorAll('.course-btn').forEach(btn => {
             this.style.transform = '';
         }, 150);
         
-        // Optional: Track analytics (you can add your tracking code here)
+        // Optional: Track analytics
         console.log(`Curso acessado: ${courseName}`);
     });
 });
@@ -85,7 +85,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Search functionality (basic)
+// Search functionality
 function createSearchBox() {
     const searchContainer = document.createElement('div');
     searchContainer.className = 'search-container';
@@ -227,3 +227,46 @@ function createBackToTopButton() {
 // Initialize back to top button
 document.addEventListener('DOMContentLoaded', createBackToTopButton);
 
+// Theme toggle functionality
+function initializeThemeToggle() {
+    const themeToggleBtn = document.querySelector('.theme-toggle');
+    const themeStylesheet = document.querySelector('link[href="style.css"]');
+    const darkStylesheet = document.createElement('link');
+    darkStylesheet.rel = 'stylesheet';
+    darkStylesheet.href = 'style-final.css';
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+        document.head.appendChild(darkStylesheet);
+        themeStylesheet.disabled = true;
+        themeToggleBtn.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+        const isDarkMode = themeToggleBtn.querySelector('i').classList.contains('fa-moon');
+        
+        if (isDarkMode) {
+            // Switch to light mode
+            themeStylesheet.disabled = false;
+            darkStylesheet.remove();
+            themeToggleBtn.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'light');
+        } else {
+            // Switch to dark mode
+            document.head.appendChild(darkStylesheet);
+            themeStylesheet.disabled = true;
+            themeToggleBtn.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'dark');
+        }
+        
+        // Add click animation
+        themeToggleBtn.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            themeToggleBtn.style.transform = 'scale(1)';
+        }, 150);
+    });
+}
+
+// Initialize theme toggle
+document.addEventListener('DOMContentLoaded', initializeThemeToggle);
