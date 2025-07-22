@@ -25,14 +25,13 @@ class ParticleNetwork {
         this.createCanvas();
         this.createParticles();
         this.bindEvents();
-        this.animate();
+        this.startAnimation(); // Inicia animação explicitamente
         
         // Escuta evento personalizado disparado pelo script.js
         window.addEventListener('themeChanged', (e) => {
-            this.pauseAnimation();
             this.isDarkMode = e.detail.isDarkMode;
             this.createParticles(); // Recria partículas com a nova cor
-            this.animate(); // Reinicia a animação
+            this.startAnimation(); // Reinicia animação após troca de tema
         });
     }
     
@@ -42,6 +41,7 @@ class ParticleNetwork {
         this.ctx = this.canvas.getContext('2d');
         document.body.appendChild(this.canvas);
         this.resizeCanvas();
+        this.canvas.style.pointerEvents = 'none'; // Evita interferência na rolagem
     }
     
     resizeCanvas() {
@@ -74,13 +74,6 @@ class ParticleNetwork {
         });
     }
     
-    pauseAnimation() {
-        if (this.animationId) {
-            cancelAnimationFrame(this.animationId);
-            this.animationId = null;
-        }
-    }
-    
     updateParticles() {
         this.particles.forEach(particle => {
             particle.x += particle.vx;
@@ -108,47 +101,58 @@ class ParticleNetwork {
     }
     
     drawParticles() {
-        this.ctx.beginPath();
-        this.particles.forEach(particle => {
-            this.ctx.moveTo(particle.x, particle.y);
-            this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        });
-        this.ctx.fillStyle = this.isDarkMode ? `rgba(255, 255, 255, ${this.settings.particleOpacity})` : `rgba(0, 0, 0, ${this.settings.particleOpacity})`;
-        this.ctx.fill();
+        if (this.ctx) {
+            this.ctx.beginPath();
+            this.particles.forEach(particle => {
+                this.ctx.moveTo(particle.x, particle.y);
+                this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            });
+            this.ctx.fillStyle = this.isDarkMode ? `rgba(255, 255, 255, ${this.settings.particleOpacity})` : `rgba(0, 0, 0, ${this.settings.particleOpacity})`;
+            this.ctx.fill();
+        }
     }
     
     drawConnections() {
-        for (let i = 0; i < this.particles.length; i++) {
-            for (let j = i + 1; j < this.particles.length; j++) {
-                const dx = this.particles[i].x - this.particles[j].x;
-                const dy = this.particles[i].y - this.particles[j].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < this.settings.maxDistance) {
-                    const opacity = (this.settings.maxDistance - distance) / this.settings.maxDistance * this.settings.lineOpacity;
-                    this.ctx.beginPath();
-                    this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
-                    this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
-                    this.ctx.strokeStyle = this.isDarkMode ? `rgba(255, 255, 255, ${opacity})` : `rgba(0, 0, 0, ${opacity})`;
-                    this.ctx.lineWidth = 1;
-                    this.ctx.stroke();
+        if (this.ctx) {
+            for (let i = 0; i < this.particles.length; i++) {
+                for (let j = i + 1; j < this.particles.length; j++) {
+                    const dx = this.particles[i].x - this.particles[j].x;
+                    const dy = this.particles[i].y - this.particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < this.settings.maxDistance) {
+                        const opacity = (this.settings.maxDistance - distance) / this.settings.maxDistance * this.settings.lineOpacity;
+                        this.ctx.beginPath();
+                        this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
+                        this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
+                        this.ctx.strokeStyle = this.isDarkMode ? `rgba(255, 255, 255, ${opacity})` : `rgba(0, 0, 0, ${opacity})`;
+                        this.ctx.lineWidth = 1;
+                        this.ctx.stroke();
+                    }
                 }
             }
         }
     }
     
+    startAnimation() {
+        if (this.animationId) {
+            cancelAnimationFrame(this.animationId);
+        }
+        this.animate();
+    }
+    
     animate() {
-        if (!this.animationId) {
-            this.animationId = requestAnimationFrame(() => this.animate());
+        if (this.ctx) {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
             this.updateParticles();
             this.drawConnections();
             this.drawParticles();
         }
+        this.animationId = requestAnimationFrame(() => this.animate());
     }
     
     destroy() {
-        this.pauseAnimation();
+        if (this.animationId) cancelAnimationFrame(this.animationId);
         if (this.canvas) this.canvas.remove();
     }
 }
