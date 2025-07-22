@@ -342,7 +342,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Footer */
+/* Footer (Copiado do tema escuro) */
 .footer {
     text-align: center;
     padding: 3rem 0;
@@ -356,7 +356,9 @@ body {
 .footer-content p {
     margin-bottom: 0.5rem;
     opacity: 0.9;
-    white-space: nowrap; /* Impede quebras de linha indesejadas */
+    white-space: normal; /* Permite quebra de linha */
+    word-break: break-word; /* Quebra palavras longas se necessário */
+    display: block; /* Remove flex para melhor ajuste */
 }
 
 .footer-content i {
@@ -373,10 +375,8 @@ body {
 .update-info p {
     font-size: 0.9rem;
     color: #666;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+    display: block; /* Remove flex para melhor ajuste */
+    text-align: center;
 }
 
 .update-info strong {
@@ -393,11 +393,10 @@ body {
 .credits p {
     font-size: 0.85rem;
     color: #666;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    white-space: nowrap; /* Impede quebras de linha indesejadas */
+    display: block; /* Remove flex para melhor ajuste */
+    text-align: center;
+    white-space: normal; /* Permite quebra de linha */
+    word-break: break-word; /* Quebra palavras longas se necessário */
 }
 
 .credits a {
