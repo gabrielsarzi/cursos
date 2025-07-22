@@ -17,7 +17,7 @@ class ParticleNetwork {
             mouseRadius: 150
         };
         
-        this.isDarkMode = localStorage.getItem('theme') === 'dark'; // Detecta o tema inicial
+        this.isDarkMode = document.body.classList.contains('dark-mode'); // Detecta tema inicial via classe no body
         this.init();
     }
     
@@ -35,6 +35,17 @@ class ParticleNetwork {
                 this.createParticles(); // Recria partículas com a nova cor
             });
         }
+        
+        // Observa mudanças no body para detectar tema
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'class') {
+                    this.isDarkMode = document.body.classList.contains('dark-mode');
+                    this.createParticles(); // Atualiza partículas ao mudar tema
+                }
+            });
+        });
+        observer.observe(document.body, { attributes: true });
     }
     
     createCanvas() {
