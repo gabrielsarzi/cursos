@@ -181,11 +181,11 @@ function initializeThemeToggle() {
         darkStylesheet.disabled = false;
         lightStylesheet.disabled = true;
         themeToggleBtn.querySelector('i').classList.replace('fa-sun', 'fa-moon');
-        favicon.href = 'favicon-dark.ico'; // Opcional: favicon escuro
+        favicon.href = 'favicon-dark.ico';
     } else {
         darkStylesheet.disabled = true;
         lightStylesheet.disabled = false;
-        favicon.href = 'favicon.ico'; // Opcional: favicon claro
+        favicon.href = 'favicon.ico';
     }
 
     themeToggleBtn.addEventListener('click', () => {
@@ -206,6 +206,16 @@ function initializeThemeToggle() {
             favicon.href = 'favicon-dark.ico';
             localStorage.setItem('theme', 'dark');
         }
+        
+        // Força recarregamento dos estilos para corrigir o bug visual
+        document.body.style.transition = 'none'; // Desativa transições temporariamente
+        setTimeout(() => {
+            document.body.style.transition = ''; // Reativa transições
+        }, 50);
+        
+        // Dispara evento para partículas
+        const event = new CustomEvent('themeChanged', { detail: { isDarkMode: !isDarkMode } });
+        window.dispatchEvent(event);
         
         // Add click animation
         themeToggleBtn.style.transform = 'scale(0.95)';
