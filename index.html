@@ -1,39 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos Gratuitos - Conhecimento para Todos</title>
+    <title>Cursos Gratuitos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-dark.css">
     <link rel="stylesheet" href="style-final.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <header class="header">
             <div class="header-content">
                 <div class="logo">
-                    <img src="logo.png" alt="Gabriel Sarzi Logo" class="logo-image">
-                    <i class="fas fa-graduation-cap"></i>
+                    <i class="fas fa-book-open"></i>
                     <h1>Cursos Gratuitos</h1>
                 </div>
                 <p class="subtitle">Conhecimento para Todos</p>
             </div>
         </header>
 
-        <!-- About Section -->
-        <section class="about-section">
-            <div class="about-content">
-                <h2><i class="fas fa-info-circle"></i> Sobre esta Página</h2>
-                <p>Esta página foi desenvolvida para <strong>agrupar cursos garimpados na internet</strong> e assim ajudar a <strong>espalhar o conhecimento gratuito</strong>. Acreditamos que a educação deve ser acessível a todos, e por isso reunimos aqui uma seleção cuidadosa de cursos online gratuitos de qualidade em diversas áreas.</p>
-                <p>Todos os cursos listados são <strong>100% gratuitos</strong> e foram selecionados por sua qualidade e relevância no mercado atual. Nosso objetivo é democratizar o acesso ao conhecimento e ajudar pessoas a desenvolverem novas habilidades.</p>
-            </div>
-        </section>
-
-        <!-- Course Categories -->
         <main class="main-content">
-            <!-- English Courses -->
+            <section class="about-section">
+                <div class="about-content">
+                    <h2><i class="fas fa-info-circle"></i> Sobre esta Página</h2>
+                    <p>Esta página foi desenvolvida para agrupar cursos garimpados na internet e assim ajudar a espalhar o conhecimento gratuito. Acreditamos que a educação deve ser acessível a todos, e por isso reunimos aqui uma seleção cuidadosa de cursos online gratuitos de qualidade em diversas áreas.</p>
+                    <p><strong>Todos os cursos listados são 100% gratuitos</strong> e foram selecionados por sua qualidade e relevância no mercado atual. Nosso objetivo é democratizar o acesso ao conhecimento e ajudar pessoas a desenvolverem novas habilidades.</p>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <div class="about-content">
+                    <h2><i class="fas fa-certificate"></i> Corrida para Certificação da Oracle 2025</h2>
+                    <p>A <strong>Corrida para Certificação da Oracle 2025</strong> oferece uma oportunidade única para profissionais e estudantes adquirirem certificações gratuitas em tecnologias Oracle. Com foco em áreas como nuvem, banco de dados, Java e inteligência artificial, esses cursos são ideais para impulsionar sua carreira no mercado de tecnologia. Aproveite esta iniciativa para obter certificações reconhecidas globalmente sem custo algum!</p>
+                    <p><strong>Os cursos são 100% gratuitos</strong> e incluem materiais de estudo, exames de certificação e suporte para aprendizado. Abaixo, listamos alguns dos cursos disponíveis na plataforma Oracle University para a campanha de 2025.</p>
+                </div>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-icon"><i class="fas fa-cloud"></i></div>
+                        <h3>Oracle Cloud Infrastructure Foundations</h3>
+                        <p>Aprenda os fundamentos da Oracle Cloud Infrastructure, incluindo serviços de computação, armazenamento e redes.</p>
+                        <a href="https://education.oracle.com/product-courses_17373_OCI_Foundations" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon"><i class="fas fa-database"></i></div>
+                        <h3>Oracle Database Foundations</h3>
+                        <p>Conheça os conceitos básicos de administração de bancos de dados Oracle, incluindo SQL e gerenciamento de dados.</p>
+                        <a href="https://education.oracle.com/product-courses_17373_Database_Foundations" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon"><i class="fas fa-code"></i></div>
+                        <h3>Java SE Programming I</h3>
+                        <p>Domine os fundamentos da programação em Java, uma das linguagens mais usadas no mundo.</p>
+                        <a href="https://education.oracle.com/product-courses_17373_Java_SE" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon"><i class="fas fa-brain"></i></div>
+                        <h3>Oracle AI Foundations</h3>
+                        <p>Explore os conceitos de inteligência artificial e machine learning aplicados às soluções Oracle.</p>
+                        <a href="https://education.oracle.com/product-courses_17373_AI_Foundations" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </section>
+
             <section class="category-section">
                 <div class="category-header">
                     <i class="fas fa-language"></i>
@@ -42,63 +74,38 @@
                 </div>
                 <div class="courses-grid">
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-language"></i></div>
                         <h3>Duolingo</h3>
                         <p>Plataforma gamificada para aprender inglês de forma divertida. Apenas 5 minutos por dia!</p>
-                        <a href="https://www.duolingo.com/course/en/learn/Learn-English" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-video"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-language"></i></div>
                         <h3>Kultivi - Inglês Online</h3>
                         <p>225 aulas do básico ao avançado com certificado. Curso completo e estruturado.</p>
-                        <a href="https://kultivi.com/cursos/idiomas/ingles" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-flag"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-language"></i></div>
                         <h3>British Council</h3>
                         <p>Recursos gratuitos focados em habilidades específicas do inglês britânico.</p>
-                        <a href="https://learnenglish.britishcouncil.org/" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-language"></i></div>
                         <h3>Busuu</h3>
                         <p>Versão gratuita com exercícios interativos e prática com nativos.</p>
-                        <a href="https://www.busuu.com/es/languages/aprende-ingles-gratis" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-flag-usa"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-language"></i></div>
                         <h3>USA Learns</h3>
                         <p>Curso oficial do Departamento de Educação dos EUA para aprender inglês americano.</p>
-                        <a href="https://www.usalearns.org/" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </section>
 
-            <!-- SQL and Database Courses -->
             <section class="category-section">
                 <div class="category-header">
                     <i class="fas fa-database"></i>
@@ -107,242 +114,153 @@
                 </div>
                 <div class="courses-grid">
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-university"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-database"></i></div>
                         <h3>FGV - SQL Structured Query Language</h3>
                         <p>Curso gratuito da renomada FGV para aprender SQL do básico ao avançado.</p>
-                        <a href="https://educacao-executiva.fgv.br/cursos/online/curta-media-duracao-online/sql-structured-query-language" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-database"></i></div>
                         <h3>Fundação Bradesco - Implementando BD</h3>
                         <p>Introdução à implementação de banco de dados com SQL Server.</p>
-                        <a href="https://www.ev.org.br/cursos/implementando-banco-de-dados" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-database"></i></div>
                         <h3>Cursa - SQL Server Completo</h3>
                         <p>Curso abrangente de SQL Server do iniciante ao avançado.</p>
-                        <a href="https://cursa.com.br/home/course/curso-de-sql-server-gratuito/417" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </section>
 
-            <!-- Power BI and BI Courses -->
             <section class="category-section">
                 <div class="category-header">
-                    <i class="fas fa-chart-line"></i>
+                    <i class="fas fa-chart-bar"></i>
                     <h2>Power BI e Business Intelligence</h2>
                     <p>Transforme dados em insights poderosos para o negócio</p>
                 </div>
                 <div class="courses-grid">
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
                         <h3>Data Science Academy - Power BI</h3>
                         <p>Curso completo gratuito de Microsoft Power BI para Business Intelligence e Data Science.</p>
-                        <a href="https://www.datascienceacademy.com.br/course/microsoft-power-bi-para-business-intelligence-e-data-science" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-government"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
                         <h3>Escola Virtual Gov - Power BI</h3>
                         <p>Aplicação do Power BI para aprimoramento da gestão pública.</p>
-                        <a href="https://www.escolavirtual.gov.br/curso/840" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-video"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
                         <h3>Kultivi - Power BI Descomplicado</h3>
                         <p>Curso básico gratuito para começar com Power BI de forma simples.</p>
-                        <a href="https://kultivi.com/cursos/tecnologia/power-bi-descomplicado" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-microsoft"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
                         <h3>Microsoft Learn - Power BI Oficial</h3>
                         <p>Treinamento oficial da Microsoft com módulos estruturados.</p>
-                        <a href="https://learn.microsoft.com/pt-br/training/powerplatform/power-bi" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </section>
 
-            <!-- Python for Data Analysis -->
             <section class="category-section">
                 <div class="category-header">
-                    <i class="fab fa-python"></i>
+                    <i class="fas fa-code"></i>
                     <h2>Python para Análise de Dados</h2>
                     <p>Aprenda a linguagem mais popular para ciência de dados</p>
                 </div>
                 <div class="courses-grid">
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-code"></i></div>
                         <h3>Data Science Academy - Python</h3>
                         <p>Fundamentos de Python para Análise de Dados e Data Science - curso completo gratuito.</p>
-                        <a href="https://www.datascienceacademy.com.br/course/fundamentos-de-linguagem-python-para-analise-de-dados-e-data-science" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-code"></i></div>
                         <h3>Asimov Academy - Análise de Dados</h3>
                         <p>Aprenda a fazer análise de dados profissional com Python e Pandas.</p>
-                        <a href="https://asimov.academy/curso-gratuito-dados/" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-code"></i></div>
                         <h3>Fundação Bradesco - Python Básico</h3>
                         <p>Fundamentos da linguagem Python com foco em raciocínio lógico.</p>
-                        <a href="https://www.ev.org.br/cursos/linguagem-de-programacao-python-basico" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-microsoft"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-code"></i></div>
                         <h3>Microsoft Learn - Python para Dados</h3>
                         <p>Explorar e analisar dados com Python usando NumPy, Pandas e Matplotlib.</p>
-                        <a href="https://learn.microsoft.com/pt-br/training/modules/explore-analyze-data-with-python/" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </section>
 
-            <!-- AI for Business Intelligence -->
             <section class="category-section">
                 <div class="category-header">
-                    <i class="fas fa-robot"></i>
+                    <i class="fas fa-brain"></i>
                     <h2>Inteligência Artificial para DBM/BI</h2>
                     <p>Aplique IA em Business Intelligence e Marketing Analytics</p>
                 </div>
                 <div class="courses-grid">
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-brain"></i></div>
                         <h3>Data Science Academy - IA</h3>
                         <p>Fundamentos de Data Science e Inteligência Artificial com certificado gratuito.</p>
-                        <a href="https://www.datascienceacademy.com.br/course/fundamentos-de-data-science-e-inteligencia-artificial" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fab fa-ibm"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-brain"></i></div>
                         <h3>IBM SkillsBuild - IA para Estudantes</h3>
                         <p>Curso básico de Inteligência Artificial da IBM para estudantes.</p>
-                        <a href="https://skillsbuild.org/pt-br/students/course-catalog/artificial-intelligence" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-brain"></i></div>
                         <h3>Coursera - IA Para Todos</h3>
                         <p>Curso do Andrew Ng em português sobre IA para todos os profissionais.</p>
-                        <a href="https://www.coursera.org/learn/ai-for-everyone-pt" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fab fa-google"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-brain"></i></div>
                         <h3>Google Cloud - IA e ML para BI</h3>
                         <p>Noções básicas de IA e ML com foco em Business Intelligence.</p>
-                        <a href="https://www.cloudskillsboost.google/course_templates/946/video/452197?locale=pt_BR" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-brain"></i></div>
                         <h3>Conversion - IA para Marketing</h3>
                         <p>Aprenda a utilizar IA nas campanhas de marketing de forma prática. 100% gratuito.</p>
-                        <a href="https://conversion.com.br/lp/curso-de-inteligencia-artificial" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fas fa-store"></i>
-                        </div>
+                        <div class="course-icon"><i class="fas fa-brain"></i></div>
                         <h3>Sebrae - IA na Prática</h3>
                         <p>IA na prática para pequenos negócios com aplicações reais.</p>
-                        <a href="https://sebrae.com.br/sites/PortalSebrae/cursosonline/ia-na-pratica-para-pequenos-negocios,bbdd9278376b4910VgnVCM1000001b00320aRCRD" target="_blank" class="course-btn">
-                            <i class="fas fa-external-link-alt"></i> Acessar Curso
-                        </a>
+                        <a href="#" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </section>
         </main>
 
-        <!-- Footer -->
         <footer class="footer">
             <div class="footer-content">
-                <p><i class="fas fa-heart"></i> Desenvolvido para democratizar o acesso ao conhecimento</p>
+                <p>Desenvolvido para democratizar o acesso ao conhecimento</p>
                 <p>Todos os cursos listados são gratuitos e foram cuidadosamente selecionados</p>
                 <div class="update-info">
-                    <p><i class="fas fa-calendar-alt"></i> Última atualização: <strong>18 de Julho de 2025</strong></p>
+                    <p><i class="fas fa-calendar-alt"></i> <strong>Última atualização:</strong> 21 de Julho de 2025</p>
                 </div>
                 <div class="manus-credit">
-                    <p><i class="fas fa-robot"></i> Site criado com a ajuda da <a href="https://manus.space" target="_blank">Manus</a></p>
+                    <p><i class="fas fa-code"></i> Site criado com a ajuda da <a href="https://manus.com" target="_blank">Manus</a></p>
                 </div>
             </div>
         </footer>
     </div>
-
-    <script src="particles.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
-
