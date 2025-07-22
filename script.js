@@ -26,8 +26,8 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all category sections
-document.querySelectorAll('.category-section').forEach(section => {
+// Observe all category sections and about sections
+document.querySelectorAll('.category-section, .about-section').forEach(section => {
     observer.observe(section);
 });
 
@@ -99,47 +99,6 @@ function createSearchBox() {
     const header = document.querySelector('.header-content');
     header.appendChild(searchContainer);
     
-    // Add search styles
-    const searchStyles = `
-        .search-container {
-            margin-top: 2rem;
-        }
-        
-        .search-box {
-            position: relative;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        .search-box i {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #7f8c8d;
-        }
-        
-        .search-box input {
-            width: 100%;
-            padding: 12px 15px 12px 45px;
-            border: none;
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-        
-        .search-box input:focus {
-            background: white;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-    `;
-    
-    const style = document.createElement('style');
-    style.textContent = searchStyles;
-    document.head.appendChild(style);
-    
     // Search functionality
     const searchInput = document.getElementById('courseSearch');
     searchInput.addEventListener('input', function() {
@@ -159,7 +118,7 @@ function createSearchBox() {
         });
         
         // Hide/show category sections based on visible cards
-        document.querySelectorAll('.category-section').forEach(section => {
+        document.querySelectorAll('.category-section, .about-section').forEach(section => {
             const visibleCards = section.querySelectorAll('.course-card[style*="display: block"], .course-card:not([style*="display: none"])');
             section.style.display = visibleCards.length > 0 || searchTerm === '' ? 'block' : 'none';
         });
@@ -174,24 +133,6 @@ function createBackToTopButton() {
     const backToTop = document.createElement('button');
     backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
     backToTop.className = 'back-to-top';
-    backToTop.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(135deg, #3498db, #2980b9);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 1.2rem;
-        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-        transition: all 0.3s ease;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 1000;
-    `;
     
     document.body.appendChild(backToTop);
     
@@ -230,17 +171,21 @@ document.addEventListener('DOMContentLoaded', createBackToTopButton);
 // Theme toggle functionality
 function initializeThemeToggle() {
     const themeToggleBtn = document.querySelector('.theme-toggle');
-    const themeStylesheet = document.querySelector('link[href="style.css"]');
-    const darkStylesheet = document.createElement('link');
-    darkStylesheet.rel = 'stylesheet';
-    darkStylesheet.href = 'style-final.css';
-    
+    const lightStylesheet = document.querySelector('link[href="style.css"]');
+    const darkStylesheet = document.querySelector('#dark-stylesheet');
+    const favicon = document.getElementById('favicon');
+
     // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme') || 'light';
     if (savedTheme === 'dark') {
-        document.head.appendChild(darkStylesheet);
-        themeStylesheet.disabled = true;
+        darkStylesheet.disabled = false;
+        lightStylesheet.disabled = true;
         themeToggleBtn.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+        favicon.href = 'favicon-dark.ico'; // Opcional: favicon escuro
+    } else {
+        darkStylesheet.disabled = true;
+        lightStylesheet.disabled = false;
+        favicon.href = 'favicon.ico'; // Opcional: favicon claro
     }
 
     themeToggleBtn.addEventListener('click', () => {
@@ -248,15 +193,17 @@ function initializeThemeToggle() {
         
         if (isDarkMode) {
             // Switch to light mode
-            themeStylesheet.disabled = false;
-            darkStylesheet.remove();
+            lightStylesheet.disabled = false;
+            darkStylesheet.disabled = true;
             themeToggleBtn.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            favicon.href = 'favicon.ico';
             localStorage.setItem('theme', 'light');
         } else {
             // Switch to dark mode
-            document.head.appendChild(darkStylesheet);
-            themeStylesheet.disabled = true;
+            lightStylesheet.disabled = true;
+            darkStylesheet.disabled = false;
             themeToggleBtn.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+            favicon.href = 'favicon-dark.ico';
             localStorage.setItem('theme', 'dark');
         }
         
