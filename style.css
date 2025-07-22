@@ -23,7 +23,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: transparent; /* Fundo transparente para não sobrepor o body */
+    background: transparent; /* Fundo transparente */
 }
 
 .container {
