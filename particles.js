@@ -17,6 +17,7 @@ class ParticleNetwork {
             mouseRadius: 150
         };
         
+        this.isDarkMode = localStorage.getItem('theme') === 'dark'; // Detecta o tema inicial
         this.init();
     }
     
@@ -25,6 +26,15 @@ class ParticleNetwork {
         this.createParticles();
         this.bindEvents();
         this.animate();
+        
+        // Atualiza o tema quando o toggle é clicado
+        const themeToggleBtn = document.querySelector('.theme-toggle');
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                this.isDarkMode = !this.isDarkMode;
+                this.createParticles(); // Recria partículas com a nova cor
+            });
+        }
     }
     
     createCanvas() {
@@ -97,7 +107,7 @@ class ParticleNetwork {
             this.ctx.moveTo(particle.x, particle.y);
             this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         });
-        this.ctx.fillStyle = `rgba(0, 0, 0, ${this.settings.particleOpacity})`; // Partículas pretas
+        this.ctx.fillStyle = this.isDarkMode ? `rgba(255, 255, 255, ${this.settings.particleOpacity})` : `rgba(0, 0, 0, ${this.settings.particleOpacity})`;
         this.ctx.fill();
     }
     
@@ -113,7 +123,7 @@ class ParticleNetwork {
                     this.ctx.beginPath();
                     this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
                     this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
-                    this.ctx.strokeStyle = `rgba(0, 0, 0, ${opacity})`; // Linhas pretas
+                    this.ctx.strokeStyle = this.isDarkMode ? `rgba(255, 255, 255, ${opacity})` : `rgba(0, 0, 0, ${opacity})`;
                     this.ctx.lineWidth = 1;
                     this.ctx.stroke();
                 }
