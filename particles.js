@@ -101,12 +101,13 @@ class ParticleNetwork {
     }
     
     drawParticles() {
+        this.ctx.beginPath();
         this.particles.forEach(particle => {
-            this.ctx.beginPath();
+            this.ctx.moveTo(particle.x, particle.y);
             this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            this.ctx.fillStyle = `rgba(255, 255, 255, ${this.settings.particleOpacity})`;
-            this.ctx.fill();
         });
+        this.ctx.fillStyle = `rgba(0, 0, 0, ${this.settings.particleOpacity})`; // Partículas pretas
+        this.ctx.fill();
     }
     
     drawConnections() {
@@ -122,7 +123,7 @@ class ParticleNetwork {
                     this.ctx.beginPath();
                     this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
                     this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
-                    this.ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+                    this.ctx.strokeStyle = `rgba(0, 0, 0, ${opacity})`; // Linhas pretas
                     this.ctx.lineWidth = 1;
                     this.ctx.stroke();
                 }
@@ -159,4 +160,3 @@ document.addEventListener('DOMContentLoaded', () => {
         particleNetwork.destroy();
     });
 });
-
