@@ -8,8 +8,8 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: #333; /* Texto principal escuro */
-    background: #fff; /* Fundo branco */
+    color: #333;
+    background: #fff;
     min-height: 100vh;
     transition: background 0.3s ease, color 0.3s ease;
     position: relative;
@@ -21,8 +21,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Mesmo z-index do tema escuro */
-    background: transparent; /* Fundo transparente */
+    z-index: -1;
+    background: #fff; /* Fundo branco no modo claro */
 }
 
 .container {
@@ -37,8 +37,8 @@ body {
 .header {
     text-align: center;
     padding: 4rem 0 2rem;
-    color: #333; /* Texto escuro */
-    background: transparent; /* Transparente como no tema escuro */
+    color: #333;
+    background: transparent;
     position: relative;
     transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease, color 0.3s ease;
     z-index: 1;
@@ -48,7 +48,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     position: relative;
-    background: transparent; /* Transparente */
+    background: transparent;
 }
 
 .logo {
@@ -61,25 +61,25 @@ body {
 
 .logo i {
     font-size: 3rem;
-    color: #333; /* Ícone escuro */
+    color: #333;
 }
 
 .logo h1 {
     font-size: 3rem;
     font-weight: 700;
-    color: #333; /* Título escuro */
+    color: #333;
 }
 
 .subtitle {
     font-size: 1.2rem;
     opacity: 0.7;
     font-weight: 300;
-    color: #666; /* Subtítulo cinza escuro */
+    color: #666;
 }
 
 /* About Section */
 .about-section {
-    background: #f9f9f9; /* Fundo claro, mas com sombra */
+    background: #f9f9f9;
     border-radius: 20px;
     padding: 2.5rem;
     margin-bottom: 3rem;
@@ -89,7 +89,7 @@ body {
 }
 
 .about-content h2 {
-    color: #333; /* Título escuro */
+    color: #333;
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     display: flex;
@@ -98,18 +98,18 @@ body {
 }
 
 .about-content h2 i {
-    color: #666; /* Ícone cinza escuro */
+    color: #666;
 }
 
 .about-content p {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1rem;
-    color: #666; /* Texto cinza escuro */
+    color: #666;
 }
 
 .about-content strong {
-    color: #333; /* Texto em negrito escuro */
+    color: #333;
     font-weight: 600;
 }
 
@@ -130,14 +130,14 @@ body {
 .category-header {
     text-align: center;
     margin-bottom: 3rem;
-    color: #333; /* Texto escuro */
-    background: transparent; /* Transparente como no tema escuro */
+    color: #333;
+    background: transparent;
     z-index: 1;
 }
 
 .category-header i {
     font-size: 3rem;
-    color: #666; /* Ícone cinza escuro */
+    color: #666;
     margin-bottom: 1rem;
     display: block;
 }
@@ -146,14 +146,14 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: #333; /* Título escuro */
+    color: #333;
 }
 
 .category-header p {
     font-size: 1.1rem;
     opacity: 0.7;
     font-weight: 300;
-    color: #666; /* Subtítulo cinza escuro */
+    color: #666;
 }
 
 /* Courses Grid */
@@ -167,10 +167,11 @@ body {
 
 /* Course Cards */
 .course-card {
-    background: #fff; /* Fundo branco */
+    background: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
     border-radius: 20px;
     padding: 2rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0; /* Borda clara para definição */
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -185,7 +186,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: #333; /* Linha superior escura */
+    background: #333;
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -197,9 +198,317 @@ body {
 .course-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: #ccc;
 }
 
 .course-icon {
     width: 60px;
     height: 60px;
-    background: #f0f0f0; /* Fundo claro do ícone */
+    background: linear-gradient(135deg, #e0e0e0, #ccc);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.course-icon i {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.course-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.course-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Course Button */
+.course-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #aaa, #888);
+    color: #333;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    justify-content: center;
+}
+
+.course-btn:hover {
+    background: linear-gradient(135deg, #999, #777);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.course-btn i {
+    font-size: 0.8rem;
+    color: #333;
+}
+
+/* Search Container */
+.search-container {
+    margin-top: 2rem;
+}
+
+.search-box {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.search-box input::placeholder {
+    color: #888;
+}
+
+.search-box input:focus {
+    background: #fff;
+    border-color: #aaa;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ccc, #aaa);
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    background: linear-gradient(135deg, #bbb, #999);
+    transform: scale(1.1);
+}
+
+.theme-toggle i {
+    color: #333;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ccc, #aaa);
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    background: linear-gradient(135deg, #bbb, #999);
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 3rem 0;
+    color: #666;
+    border-top: 1px solid #ccc;
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.footer-content i {
+    color: #888;
+    margin: 0 0.3rem;
+}
+
+.update-info {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ccc;
+}
+
+.update-info p {
+    font-size: 0.9rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.update-info strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.manus-credit {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ccc;
+}
+
+.manus-credit p {
+    font-size: 0.85rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.manus-credit a {
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.manus-credit a:hover {
+    color: #333;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.course-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.course-card:nth-child(1) { animation-delay: 0.1s; }
+.course-card:nth-child(2) { animation-delay: 0.2s; }
+.course-card:nth-child(3) { animation-delay: 0.3s; }
+.course-card:nth-child(4) { animation-delay: 0.4s; }
+.course-card:nth-child(5) { animation-delay: 0.5s; }
+.course-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(136, 136, 136, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .header {
+        padding: 2rem 0 1rem;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .logo i {
+        font-size: 2rem;
+    }
+    
+    .category-header h2 {
+        font-size: 2rem;
+    }
+    
+    .category-header i {
+        font-size: 2rem;
+    }
+    
+    .coursescini-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .course-card {
+        padding: 1.5rem;
+    }
+    
+    .about-section {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
