@@ -29,8 +29,10 @@ class ParticleNetwork {
         
         // Escuta evento personalizado disparado pelo script.js
         window.addEventListener('themeChanged', (e) => {
+            this.pauseAnimation();
             this.isDarkMode = e.detail.isDarkMode;
             this.createParticles(); // Recria partículas com a nova cor
+            this.animate(); // Reinicia a animação
         });
     }
     
@@ -53,7 +55,7 @@ class ParticleNetwork {
         for (let i = 0; i < this.settings.particleCount; i++) {
             this.particles.push({
                 x: Math.random() * this.canvas.width,
-                y: Math.random * this.canvas.height,
+                y: Math.random() * this.canvas.height,
                 vx: (Math.random() - 0.5) * this.settings.particleSpeed,
                 vy: (Math.random() - 0.5) * this.settings.particleSpeed,
                 size: Math.random() * this.settings.particleSize + 1
@@ -70,6 +72,13 @@ class ParticleNetwork {
             this.mousePosition.x = e.clientX;
             this.mousePosition.y = e.clientY;
         });
+    }
+    
+    pauseAnimation() {
+        if (this.animationId) {
+            cancelAnimationFrame(this.animationId);
+            this.animationId = null;
+        }
     }
     
     updateParticles() {
@@ -129,15 +138,17 @@ class ParticleNetwork {
     }
     
     animate() {
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.updateParticles();
-        this.drawConnections();
-        this.drawParticles();
-        this.animationId = requestAnimationFrame(() => this.animate());
+        if (!this.animationId) {
+            this.animationId = requestAnimationFrame(() => this.animate());
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            this.updateParticles();
+            this.drawConnections();
+            this.drawParticles();
+        }
     }
     
     destroy() {
-        if (this.animationId) cancelAnimationFrame(this.animationId);
+        this.pauseAnimation();
         if (this.canvas) this.canvas.remove();
     }
 }
