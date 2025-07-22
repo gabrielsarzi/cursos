@@ -13,6 +13,7 @@ body {
     min-height: 100vh;
     transition: background 0.3s ease;
     position: relative;
+    overflow: hidden; /* Evita que partículas fiquem cortadas */
 }
 
 #particles-canvas {
@@ -22,13 +23,15 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: #fff;
+    background: transparent; /* Fundo transparente para não sobrepor o body */
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Header */
@@ -353,6 +356,7 @@ body {
 .footer-content p {
     margin-bottom: 0.5rem;
     opacity: 0.9;
+    white-space: nowrap; /* Impede quebras de linha indesejadas */
 }
 
 .footer-content i {
@@ -393,6 +397,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    white-space: nowrap; /* Impede quebras de linha indesejadas */
 }
 
 .credits a {
