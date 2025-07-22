@@ -17,7 +17,7 @@ class ParticleNetwork {
             mouseRadius: 150
         };
         
-        this.isDarkMode = document.body.classList.contains('dark-mode'); // Detecta tema inicial via classe no body
+        this.isDarkMode = localStorage.getItem('theme') === 'dark'; // Sincroniza com script.js
         this.init();
     }
     
@@ -27,25 +27,11 @@ class ParticleNetwork {
         this.bindEvents();
         this.animate();
         
-        // Atualiza o tema quando o toggle é clicado
-        const themeToggleBtn = document.querySelector('.theme-toggle');
-        if (themeToggleBtn) {
-            themeToggleBtn.addEventListener('click', () => {
-                this.isDarkMode = !this.isDarkMode;
-                this.createParticles(); // Recria partículas com a nova cor
-            });
-        }
-        
-        // Observa mudanças no body para detectar tema
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.attributeName === 'class') {
-                    this.isDarkMode = document.body.classList.contains('dark-mode');
-                    this.createParticles(); // Atualiza partículas ao mudar tema
-                }
-            });
+        // Escuta evento personalizado disparado pelo script.js
+        window.addEventListener('themeChanged', (e) => {
+            this.isDarkMode = e.detail.isDarkMode;
+            this.createParticles(); // Recria partículas com a nova cor
         });
-        observer.observe(document.body, { attributes: true });
     }
     
     createCanvas() {
@@ -67,7 +53,7 @@ class ParticleNetwork {
         for (let i = 0; i < this.settings.particleCount; i++) {
             this.particles.push({
                 x: Math.random() * this.canvas.width,
-                y: Math.random() * this.canvas.height,
+                y: Math.random * this.canvas.height,
                 vx: (Math.random() - 0.5) * this.settings.particleSpeed,
                 vy: (Math.random() - 0.5) * this.settings.particleSpeed,
                 size: Math.random() * this.settings.particleSize + 1
