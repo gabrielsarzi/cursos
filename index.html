@@ -1,241 +1,244 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos Gratuitos</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link id="dark-stylesheet" rel="stylesheet" href="style-final.css" disabled>
-    <link rel="icon" id="favicon" type="image/x-icon" href="favicon.ico"> <!-- Campo para favicon -->
-    <script src="particles.js"></script>
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style-final.css" id="dark-stylesheet" disabled>
+    <link rel="icon" href="favicon.ico" id="favicon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-book-open"></i>
-                    <h1>Cursos Gratuitos</h1>
-                </div>
-                <p class="subtitle">Conhecimento para Todos</p>
-                <button class="theme-toggle" aria-label="Alternar tema">
-                    <i class="fas fa-sun"></i>
-                </button>
+    <button class="theme-toggle"><i class="fas fa-sun"></i></button>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>Cursos Gratuitos</h1>
             </div>
-        </header>
-
-        <main class="main-content">
-            <section class="about-section">
-                <div class="about-content">
-                    <h2><i class="fas fa-info-circle"></i> Sobre esta Página</h2>
-                    <p>Esta página foi desenvolvida para agrupar cursos garimpados na internet e assim ajudar a espalhar o conhecimento gratuito. Acreditamos que a educação deve ser acessível a todos, e por isso reunimos aqui uma seleção cuidadosa de cursos online gratuitos de qualidade em diversas áreas.</p>
-                    <p><strong>Todos os cursos listados são 100% gratuitos</strong> e foram selecionados por sua qualidade e relevância no mercado atual. Nosso objetivo é democratizar o acesso ao conhecimento e ajudar pessoas a desenvolverem novas habilidades.</p>
+            <p class="subtitle">Conhecimento para Todos</p>
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar cursos..." id="courseSearch">
                 </div>
-            </section>
-
-            <section class="about-section">
-                <div class="about-content">
-                    <h2><i class="fas fa-certificate"></i> Corrida para Certificação da Oracle 2025</h2>
-                    <p>A <strong>Corrida para Certificação da Oracle 2025</strong> oferece uma oportunidade única para profissionais e estudantes adquirirem certificações gratuitas em tecnologias Oracle. Com foco em áreas como nuvem, banco de dados, Java e inteligência artificial, esses cursos são ideais para impulsionar sua carreira no mercado de tecnologia. Aproveite esta iniciativa para obter certificações reconhecidas globalmente sem custo algum!</p>
-                    <p><strong>Os cursos são 100% gratuitos</strong> e incluem materiais de estudo, exames de certificação e suporte para aprendizado. Abaixo, listamos alguns dos cursos disponíveis na plataforma Oracle University para a campanha de 2025.</p>
-                </div>
-                <div class="courses-grid">
-                    <div class="course-card">
-                        <div class="course-icon"><i class="fas fa-cloud"></i></div>
-                        <h3>Oracle Cloud Infrastructure Foundations</h3>
-                        <p>Aprenda os fundamentos da Oracle Cloud Infrastructure, incluindo serviços de computação, armazenamento e redes.</p>
-                        <a href="https://education.oracle.com/product-courses_17373_OCI_Foundations" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-icon"><i class="fas fa-database"></i></div>
-                        <h3>Oracle Database Foundations</h3>
-                        <p>Conheça os conceitos básicos de administração de bancos de dados Oracle, incluindo SQL e gerenciamento de dados.</p>
-                        <a href="https://education.oracle.com/product-courses_17373_Database_Foundations" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-icon"><i class="fas fa-code"></i></div>
-                        <h3>Java SE Programming I</h3>
-                        <p>Domine os fundamentos da programação em Java, uma das linguagens mais usadas no mundo.</p>
-                        <a href="https://education.oracle.com/product-courses_17373_Java_SE" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-icon"><i class="fas fa-brain"></i></div>
-                        <h3>Oracle AI Foundations</h3>
-                        <p>Explore os conceitos de inteligência artificial e machine learning aplicados às soluções Oracle.</p>
-                        <a href="https://education.oracle.com/product-courses_17373_AI_Foundations" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </section>
-
-          <section class="category-section">
-  <div class="category-header">
-    <i class="fas fa-language"></i>
-    <h2>Cursos de Inglês e Espanhol</h2>
-    <p>Aprimore seus idiomas com cursos gratuitos e de qualidade</p>
-  </div>
-  <div class="courses-grid">
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-language"></i></div>
-      <h3>Kultivi - Inglês 2.0</h3>
-      <p>Neste curso de Inglês você vai evoluir de forma fácil e natural, com as aulas e materiais didáticos exclusivos.</p>
-      <a href="https://kultivi.com/cursos/idiomas/curso-de-ingles-kultivi-20" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-language"></i></div>
-      <h3>Kultivi - Inglês 1.0</h3>
-      <p>Desde as primeiras aulas você consegue sair do zero e formar algumas frases.</p>
-      <a href="https://kultivi.com/cursos/idiomas/ingles" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-language"></i></div>
-      <h3>Kultivi – Espanhol Básico</h3>
-      <p>Pronúncia, gramática e vocabulário essenciais para iniciantes.</p>
-      <a href="https://kultivi.com/cursos/idiomas/espanhol" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-</section>
-
-<section class="category-section">
-  <div class="category-header">
-    <i class="fas fa-database"></i>
-    <h2>SQL e Bancos de Dados</h2>
-    <p>Domine a linguagem de consulta mais importante do mercado</p>
-  </div>
-  <div class="courses-grid">
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-database"></i></div>
-      <h3>Microsoft Learn – Introdução a Bancos de Dados</h3>
-      <p>Conceitos de bancos relacionais e uso de SQL, em português.</p>
-      <a href="https://https://learn.microsoft.com/pt-br/shows/dbfundamentals/" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-database"></i></div>
-      <h3>Fundação Bradesco – Implementando Banco de Dados</h3>
-      <p>Modelagem, administração e consultas em SQL Server.</p>
-      <a href="https://www.ev.org.br/cursos/implementando-banco-de-dados" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-database"></i></div>
-      <h3>Prime Cursos – SQL Básico</h3>
-      <p>Fundamentos de SQL, incluindo consultas, filtros e junções.</p>
-      <a href="https://www.primecursos.com.br/sql/" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<section class="category-section">
-  <div class="category-header">
-    <i class="fas fa-chart-bar"></i>
-    <h2>Power BI e Business Intelligence</h2>
-    <p>Transforme dados em insights poderosos para o negócio</p>
-  </div>
-  <div class="courses-grid">
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
-      <h3>Microsoft Learn – Power BI</h3>
-      <p>Fundamentos para criar relatórios e visualizações no Power BI.</p>
-      <a href="https://learn.microsoft.com/pt-br/training/powerplatform/power-bi" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
-      <h3>Data Science Academy – Power BI para Data Science</h3>
-      <p>Dashboards interativos com integração a bases de dados.</p>
-      <a href="https://www.datascienceacademy.com.br/cursosgratuitos?msg=not-logged-in" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
-      <h3>Fundação Bradesco – Análise de Dados com Power BI</h3>
-      <p>Uso do Power BI para análise de dados e visualizações interativas.</p>
-      <a href="https://www.ev.org.br/cursos/analise-de-dados-no-power-bi" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
-      <h3>Kultivi – Business Intelligence com Power BI</h3>
-      <p>Dashboards e relatórios interativos para tomada de decisão.</p>
-      <a href="https://kultivi.com/cursos/negocios/power-bi-descomplicado" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<section class="category-section">
-  <div class="category-header">
-    <i class="fas fa-code"></i>
-    <h2>Python para Análise de Dados</h2>
-    <p>Aprenda a linguagem mais popular para ciência de dados</p>
-  </div>
-  <div class="courses-grid">
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-code"></i></div>
-      <h3>Microsoft Learn – Python para Análise de Dados</h3>
-      <p>Manipulação de dados com NumPy, Pandas e visualizações.</p>
-      <a href="https://learn.microsoft.com/pt-br/training/modules/explore-analyze-data-with-python/" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-code"></i></div>
-      <h3>Data Science Academy – Python Fundamentos</h3>
-      <p>Curso com Pandas e NumPy focado em análise de dados.</p>
-      <a href="https://www.datascienceacademy.com.br/course/fundamentos-de-linguagem-python-para-analise-de-dados-e-data-science" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-code"></i></div>
-      <h3>Fundação Bradesco – Python Básico para Análise de Dados</h3>
-      <p>Introdução ao Python aplicado à manipulação de dados.</p>
-      <a href="https://www.ev.org.br/cursos/linguagem-de-programacao-python-basico" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-</section>
-
-<section class="category-section">
-  <div class="category-header">
-    <i class="fas fa-brain"></i>
-    <h2>Inteligência Artificial (IA)</h2>
-    <p>Conceitos de IA, IA Generativa e aplicação prática em dados</p>
-  </div>
-  <div class="courses-grid">
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-brain"></i></div>
-      <h3>Microsoft Learn – Fundamentos de IA</h3>
-      <p>Introdução à IA, machine learning e visão computacional.</p>
-      <a href="https://learn.microsoft.com/pt-br/training/modules/get-started-ai-fundamentals/" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-brain"></i></div>
-      <h3>AWS Skill Builder – Introdução à IA Generativa</h3>
-      <p>Fundamentos e aplicações práticas de IA generativa.</p>
-      <a href="https://aws.amazon.com/pt/training/learn-about/generative-ai/" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <div class="course-card">
-      <div class="course-icon"><i class="fas fa-brain"></i></div>
-      <h3>Data Science Academy – Fundamentos de Data Science e IA</h3>
-      <p>Estatística, ML e IA com certificado gratuito.</p>
-      <a href="https://www.datascienceacademy.com.br/course/fundamentos-de-data-science-e-inteligencia-artificial" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-      <div class="course-card">
-      <div class="course-icon"><i class="fas fa-brain"></i></div>
-      <h3>Coursera (DeepLearning.AI) – IA para Todos</h3>
-      <p>Curso não técnico, em português, sobre impacto da IA na sociedade.</p>
-      <a href="https://www.coursera.org/learn/ai-for-everyone-pt" class="course-btn" target="_blank">Acessar Curso <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-        </main>
+            </div>
         </div>
+    </header>
+
+    <div class="container">
+        <section class="about-section">
+            <div class="about-content">
+                <h2><i class="fas fa-info-circle"></i> Sobre esta Página</h2>
+                <p>Esta página foi desenvolvida para agrupar cursos garimpados na internet e assim ajudar a espalhar o conhecimento gratuito. Acreditamos que a educação deve ser acessível a todos, e por isso reunimos aqui uma seleção cuidadosa de cursos online gratuitos de qualidade em diversas áreas.</p>
+                <p><strong>Todos os cursos listados são 100% gratuitos</strong> e foram selecionados por sua qualidade e relevância no mercado atual. Nosso objetivo é democratizar o acesso ao conhecimento e ajudar pessoas a desenvolverem novas habilidades.</p>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <div class="category-header">
+                <i class="fas fa-certificate"></i>
+                <h2>Corrida para Certificação da Oracle 2025</h2>
+                <p>A Corrida para Certificação da Oracle 2025 oferece uma oportunidade única para profissionais e estudantes adquirirem certificações gratuitas em tecnologias Oracle. Com foco em áreas como nuvem, banco de dados, Java e inteligência artificial, esses cursos são ideais para impulsionar sua carreira no mercado de tecnologia. Aproveite esta iniciativa para obter certificações reconhecidas globalmente sem custo algum!</p>
+                <p>Os cursos são 100% gratuitos e incluem materiais de estudo, exames de certificação e suporte para aprendizado. Abaixo, listamos alguns dos cursos disponíveis na plataforma Oracle University para a campanha de 2025.</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Oracle Cloud Infrastructure Foundations</h3>
+                    <p>Aprenda os fundamentos da Oracle Cloud Infrastructure, incluindo serviços de computação, armazenamento e redes.</p>
+                    <a href="https://education.oracle.com/product-courses_17373_OCI_Foundations" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-database"></i></div>
+                    <h3>Oracle Database Foundations</h3>
+                    <p>Conheça os conceitos básicos de administração de bancos de dados Oracle, incluindo SQL e gerenciamento de dados.</p>
+                    <a href="https://education.oracle.com/product-courses_17373_Database_Foundations" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fab fa-java"></i></div>
+                    <h3>Java SE Programming I</h3>
+                    <p>Domine os fundamentos da programação em Java, uma das linguagens mais usadas no mundo.</p>
+                    <a href="https://education.oracle.com/product-courses_17373_Java_SE" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Oracle AI Foundations</h3>
+                    <p>Explore os conceitos de inteligência artificial e machine learning aplicados às soluções Oracle.</p>
+                    <a href="https://education.oracle.com/product-courses_17373_AI_Foundations" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <div class="category-header">
+                <i class="fas fa-language"></i>
+                <h2>Cursos de Inglês e Espanhol</h2>
+                <p>Aprimore seus idiomas com cursos gratuitos e de qualidade</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-language"></i></div>
+                    <h3>Kultivi - Inglês 2.0</h3>
+                    <p>Neste curso de Inglês você vai evoluir de forma fácil e natural, com as aulas e materiais didáticos exclusivos.</p>
+                    <a href="https://kultivi.com/cursos/idiomas/curso-de-ingles-kultivi-20" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-language"></i></div>
+                    <h3>Kultivi - Inglês 1.0</h3>
+                    <p>Desde as primeiras aulas você consegue sair do zero e formar algumas frases.</p>
+                    <a href="https://kultivi.com/cursos/idiomas/ingles" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-language"></i></div>
+                    <h3>Kultivi – Espanhol Básico</h3>
+                    <p>Pronúncia, gramática e vocabulário essenciais para iniciantes.</p>
+                    <a href="https://kultivi.com/cursos/idiomas/espanhol" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <div class="category-header">
+                <i class="fas fa-database"></i>
+                <h2>SQL e Bancos de Dados</h2>
+                <p>Domine a linguagem de consulta mais importante do mercado</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-database"></i></div>
+                    <h3>Microsoft Learn – Introdução a Bancos de Dados</h3>
+                    <p>Conceitos de bancos relacionais e uso de SQL, em português.</p>
+                    <a href="https://https://learn.microsoft.com/pt-br/shows/dbfundamentals/" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-database"></i></div>
+                    <h3>Fundação Bradesco – Implementando Banco de Dados</h3>
+                    <p>Modelagem, administração e consultas em SQL Server.</p>
+                    <a href="https://www.ev.org.br/cursos/implementando-banco-de-dados" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-database"></i></div>
+                    <h3>Prime Cursos – SQL Básico</h3>
+                    <p>Fundamentos de SQL, incluindo consultas, filtros e junções.</p>
+                    <a href="https://www.primecursos.com.br/sql/" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <div class="category-header">
+                <i class="fas fa-chart-bar"></i>
+                <h2>Power BI e Business Intelligence</h2>
+                <p>Transforme dados em insights poderosos para o negócio</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Microsoft Learn – Power BI</h3>
+                    <p>Fundamentos para criar relatórios e visualizações no Power BI.</p>
+                    <a href="https://www.primecursos.com.br/sql/" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Data Science Academy – Power BI para Data Science</h3>
+                    <p>Dashboards interativos com integração a bases de dados.</p>
+                    <a href="https://www.datascienceacademy.com.br/cursosgratuitos?msg=not-logged-in" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Fundação Bradesco – Análise de Dados com Power BI</h3>
+                    <p>Uso do Power BI para análise de dados e visualizações interativas.</p>
+                    <a href="https://www.ev.org.br/cursos/analise-de-dados-no-power-bi" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Kultivi – Business Intelligence com Power BI</h3>
+                    <p>Dashboards e relatórios interativos para tomada de decisão.</p>
+                    <a href="https://kultivi.com/cursos/negocios/power-bi-descomplicado" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <div class="category-header">
+                <i class="fab fa-python"></i>
+                <h2>Python para Análise de Dados</h2>
+                <p>Aprenda a linguagem mais popular para ciência de dados</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-icon"><i class="fab fa-python"></i></div>
+                    <h3>Microsoft Learn – Python para Análise de Dados</h3>
+                    <p>Manipulação de dados com NumPy, Pandas e visualizações.</p>
+                    <a href="https://kultivi.com/cursos/negocios/power-bi-descomplicado" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fab fa-python"></i></div>
+                    <h3>Data Science Academy – Python Fundamentos</h3>
+                    <p>Curso com Pandas e NumPy focado em análise de dados.</p>
+                    <a href="https://www.datascienceacademy.com.br/course/fundamentos-de-linguagem-python-para-analise-de-dados-e-data-science" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fab fa-python"></i></div>
+                    <h3>Fundação Bradesco – Python Básico para Análise de Dados</h3>
+                    <p>Introdução ao Python aplicado à manipulação de dados.</p>
+                    <a href="https://www.ev.org.br/cursos/linguagem-de-programacao-python-basico" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <div class="category-header">
+                <i class="fas fa-brain"></i>
+                <h2>Inteligência Artificial (IA)</h2>
+                <p>Conceitos de IA, IA Generativa e aplicação prática em dados</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Microsoft Learn – Fundamentos de IA</h3>
+                    <p>Introdução à IA, machine learning e visão computacional.</p>
+                    <a href="https://learn.microsoft.com/pt-br/training/modules/get-started-ai-fundamentals" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AWS Skill Builder – Introdução à IA Generativa</h3>
+                    <p>Fundamentos e aplicações práticas de IA generativa.</p>
+                    <a href="https://aws.amazon.com/pt/training/learn-about/generative-ai/" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Data Science Academy – Fundamentos de Data Science e IA</h3>
+                    <p>Estatística, ML e IA com certificado gratuito.</p>
+                    <a href="https://www.datascienceacademy.com.br/course/fundamentos-de-data-science-e-inteligencia-artificial" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Coursera (DeepLearning.AI) – IA para Todos</h3>
+                    <p>Curso não técnico, em português, sobre impacto da IA na sociedade.</p>
+                    <a href="https://www.coursera.org/learn/ai-for-everyone-pt" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
 
         <footer class="footer">
-  <div class="footer-content">
-    <p>Todos os materiais são de acesso público. Este site apenas os organiza e não se responsabiliza pelo conteúdo.</p>
-
-    <p>Encontrou algum erro ou quer sugerir um curso? <a href="contato.html">Clique aqui para entrar em contato</a>.</p>
-
-    <div class="update-info">
-      <p><i class="fas fa-calendar-alt"></i> <strong>Última atualização:</strong> 22 de Julho de 2025</p>
+            <div class="footer-content">
+                <p>Todos os materiais são de acesso público. Este site apenas os organiza e não se responsabiliza pelo conteúdo.</p>
+                <p><a href="#">Encontrou algum erro ou quer sugerir um curso? Clique aqui para entrar em contato.</a></p>
+                <div class="update-info">
+                    <p><i class="fas fa-calendar-alt"></i> <strong>Última atualização:</strong> 22 de Julho de 2025</p>
+                </div>
+                <div class="manus-credit">
+                    <p><i class="fas fa-code"></i> Criado por Gabriel Sarzi, com ajuda da <a href="https://x.ai" target="_blank">Manus</a> e do <a href="https://x.ai" target="_blank">Grok</a></p>
+                </div>
+            </div>
+        </footer>
     </div>
 
-    <div class="credits">
-      <p><i class="fas fa-code"></i> Criado por <a href="https://www.linkedin.com/in/gabrielsarzi" target="_blank">Gabriel Sarzi</a>, com ajuda da <a href="https://manus.im/invitation/HFSJDQX7PNLIT5" target="_blank">Manus</a> e do <a href="https://x.ai/grok" target="_blank">Grok</a></p>
-    </div>
-  </div>
-</footer>
-    </div>
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
