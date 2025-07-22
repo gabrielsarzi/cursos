@@ -11,9 +11,8 @@ body {
     color: #333;
     background: #fff;
     min-height: 100vh;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
     position: relative;
-    overflow: hidden; /* Evita que partículas fiquem cortadas */
 }
 
 #particles-canvas {
@@ -40,7 +39,8 @@ body {
     padding: 4rem 0 2rem;
     color: #333;
     position: relative;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease, color 0.3s ease;
+    background: inherit; /* Herda o background do body */
 }
 
 .header-content {
@@ -60,12 +60,14 @@ body {
 .logo i {
     font-size: 3rem;
     color: #333;
+    transition: color 0.3s ease;
 }
 
 .logo h1 {
     font-size: 3rem;
     font-weight: 700;
     color: #333;
+    transition: color 0.3s ease;
 }
 
 .subtitle {
@@ -73,6 +75,7 @@ body {
     opacity: 0.7;
     font-weight: 300;
     color: #666;
+    transition: color 0.3s ease;
 }
 
 /* About Section */
@@ -92,10 +95,12 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    transition: color 0.3s ease;
 }
 
 .about-content h2 i {
     color: #666;
+    transition: color 0.3s ease;
 }
 
 .about-content p {
@@ -103,11 +108,13 @@ body {
     line-height: 1.8;
     margin-bottom: 1rem;
     color: #666;
+    transition: color 0.3s ease;
 }
 
 .about-content strong {
     color: #333;
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 /* Category Sections */
@@ -127,6 +134,7 @@ body {
     text-align: center;
     margin-bottom: 3rem;
     color: #333;
+    transition: color 0.3s ease;
 }
 
 .category-header i {
@@ -134,6 +142,7 @@ body {
     color: #666;
     margin-bottom: 1rem;
     display: block;
+    transition: color 0.3s ease;
 }
 
 .category-header h2 {
@@ -141,6 +150,7 @@ body {
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: #333;
+    transition: color 0.3s ease;
 }
 
 .category-header p {
@@ -148,6 +158,7 @@ body {
     opacity: 0.7;
     font-weight: 300;
     color: #666;
+    transition: color 0.3s ease;
 }
 
 /* Courses Grid */
@@ -206,6 +217,7 @@ body {
 .course-icon i {
     font-size: 1.5rem;
     color: #333;
+    transition: color 0.3s ease;
 }
 
 .course-card h3 {
@@ -214,12 +226,14 @@ body {
     color: #333;
     margin-bottom: 1rem;
     line-height: 1.3;
+    transition: color 0.3s ease;
 }
 
 .course-card p {
     color: #666;
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    transition: color 0.3s ease;
 }
 
 /* Course Button */
@@ -248,6 +262,7 @@ body {
 
 .course-btn i {
     font-size: 0.8rem;
+    transition: color 0.3s ease;
 }
 
 /* Search Container */
@@ -267,6 +282,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     color: #666;
+    transition: color 0.3s ease;
 }
 
 .search-box input {
@@ -283,6 +299,7 @@ body {
 
 .search-box input::placeholder {
     color: #666;
+    transition: color 0.3s ease;
 }
 
 .search-box input:focus {
@@ -315,6 +332,7 @@ body {
 
 .theme-toggle i {
     color: #fff;
+    transition: color 0.3s ease;
 }
 
 /* Back to Top Button */
@@ -342,7 +360,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Footer (Copiado do tema escuro) */
+/* Footer */
 .footer {
     text-align: center;
     padding: 3rem 0;
@@ -356,47 +374,54 @@ body {
 .footer-content p {
     margin-bottom: 0.5rem;
     opacity: 0.9;
-    white-space: normal; /* Permite quebra de linha */
-    word-break: break-word; /* Quebra palavras longas se necessário */
-    display: block; /* Remove flex para melhor ajuste */
+    white-space: normal;
+    word-break: break-word;
+    display: block;
+    transition: color 0.3s ease;
 }
 
 .footer-content i {
     color: #333;
     margin: 0 0.3rem;
+    transition: color 0.3s ease;
 }
 
 .update-info {
     margin-top: 1.5rem;
     padding-top: 1rem;
     border-top: 1px solid #ccc;
+    transition: border-color 0.3s ease;
 }
 
 .update-info p {
     font-size: 0.9rem;
     color: #666;
-    display: block; /* Remove flex para melhor ajuste */
+    display: block;
     text-align: center;
+    transition: color 0.3s ease;
 }
 
 .update-info strong {
     color: #333;
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .credits {
     margin-top: 1rem;
     padding-top: 1rem;
     border-top: 1px solid #ccc;
+    transition: border-color 0.3s ease;
 }
 
 .credits p {
     font-size: 0.85rem;
     color: #666;
-    display: block; /* Remove flex para melhor ajuste */
+    display: block;
     text-align: center;
-    white-space: normal; /* Permite quebra de linha */
-    word-break: break-word; /* Quebra palavras longas se necessário */
+    white-space: normal;
+    word-break: break-word;
+    transition: color 0.3s ease;
 }
 
 .credits a {
@@ -440,11 +465,13 @@ body {
 
 ::-webkit-scrollbar-track {
     background: #f0f0f0;
+    transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #ccc;
     border-radius: 4px;
+    transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
