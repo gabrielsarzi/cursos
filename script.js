@@ -227,3 +227,17 @@ function initializeThemeToggle() {
 
 // Initialize theme toggle
 document.addEventListener('DOMContentLoaded', initializeThemeToggle);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const menuClose = document.querySelector('.menu-close');
+
+    menuToggle.addEventListener('click', () => {
+        menuOverlay.classList.add('active');
+    });
+
+    menuClose.addEventListener('click', () => {
+        menuOverlay.classList.remove('active');
+    });
+});
