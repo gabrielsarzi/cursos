@@ -10,8 +10,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <button class="theme-toggle"><i class="fas fa-sun"></i></button>
-    <button class="menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button> <div class="menu-overlay" id="menu-overlay"> <div class="menu-content"> <button class="menu-close" aria-label="Fechar menu"><i class="fas fa-times"></i></button> <nav> <ul> <li><a href="index.html">Início</a></li> <li><a href="contact.html">Contato</a></li> </ul> </nav> </div> </div>
+    <div class="menu-overlay">
+    <button class="menu-close">&times;</button>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</div>
+<button class="menu-toggle">&#9776;</button>
     <header class="header">
         <div class="header-content">
             <div class="logo">
@@ -32,6 +40,44 @@
             </div>
         </section>
 
+        <section class="category-section">
+    <div class="category-header">
+        <i class="fas fa-award"></i>
+        <h2>Certificação Gratuita AWS 2025 – Níveis Foundational e Associate</h2>
+        <p>Impulsione sua carreira na nuvem com a campanha de certificação gratuita da AWS! Estudantes e profissionais iniciantes podem obter vouchers 100% gratuitos para exames das trilhas <strong>Foundational</strong> e <strong>Associate</strong>, com certificações mundialmente reconhecidas em computação em nuvem, arquitetura de soluções, machine learning e muito mais.</p>
+        <p>Por meio da plataforma <strong>AWS Educate</strong> e do programa <strong>Emerging Talent Community</strong>, você pode acumular pontos completando treinamentos e conquistar o seu voucher oficial antes do prazo final.</p>
+        <p><strong>🕒 Prazo: até 31 de agosto de 2025</strong> — aproveite enquanto é tempo!</p>
+    </div>
+
+    <div class="courses-grid">
+        <div class="course-card">
+            <div class="course-icon"><i class="fas fa-cloud"></i></div>
+            <h3>Getting Started with Compute</h3>
+            <p>Descubra os fundamentos dos serviços de computação da AWS e aprenda a criar suas primeiras instâncias EC2 na nuvem.</p>
+            <a href="https://aws.amazon.com/pt/education/awseducate/" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="course-card">
+            <div class="course-icon"><i class="fas fa-network-wired"></i></div>
+            <h3>Introduction to Cloud 101</h3>
+            <p>Aprenda os conceitos básicos da nuvem, incluindo segurança, escalabilidade e os principais serviços oferecidos pela AWS.</p>
+            <a href="https://www.aws.training/Details/Video?id=15841" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="course-card">
+            <div class="course-icon"><i class="fas fa-cogs"></i></div>
+            <h3>AWS Cloud Practitioner Essentials</h3>
+            <p>Curso preparatório completo para a certificação AWS Cloud Practitioner, com explicações sobre serviços, modelos de precificação e boas práticas.</p>
+            <a href="https://skillbuilder.aws/learn/course/external/view/elearning/134/aws-cloud-practitioner-essentials" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="course-card">
+            <div class="course-icon"><i class="fas fa-robot"></i></div>
+            <h3>Machine Learning Basics</h3>
+            <p>Explore os conceitos essenciais de machine learning na AWS e entenda como começar a usar modelos pré-treinados e serviços como o SageMaker.</p>
+            <a href="https://skillbuilder.aws/learn/course/external/view/elearning/137/aws-machine-learning-basics" class="course-btn">Acessar Curso <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+
+        
         <section class="category-section">
             <div class="category-header">
                 <i class="fas fa-certificate"></i>
